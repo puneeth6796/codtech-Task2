@@ -1,0 +1,66 @@
+def calculate_average(grades):
+    if len(grades) == 0:
+        return 0
+    else:
+        return sum(grades) / len(grades)
+
+def calculate_letter_grade(average):
+    if average >= 90:
+        return 'A'
+    elif average >= 80:
+        return 'B'
+    elif average >= 70:
+        return 'C'
+    elif average >= 60:
+        return 'D'
+    else:
+        return 'F'
+
+def calculate_gpa(average):
+    if average >= 90:
+        return 4.0
+    elif average >= 80:
+        return 3.0
+    elif average >= 70:
+        return 2.0
+    elif average >= 60:
+        return 1.0
+    else:
+        return 0.0
+
+def main():
+    grades = []
+    
+    while True:
+        print("\nStudent Grade Management System")
+        print("1. Add a grade")
+        print("2. Calculate average grade")
+        print("3. Calculate letter grade")
+        print("4. Calculate GPA")
+        print("5. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            grade = float(input("Enter grade: "))
+            grades.append(grade)
+            print("Grade added successfully!")
+        elif choice == '2':
+            average = calculate_average(grades)
+            print("Average grade:", average)
+        elif choice == '3':
+            average = calculate_average(grades)
+            letter_grade = calculate_letter_grade(average)
+            print("Letter grade:", letter_grade)
+        elif choice == '4':
+            average = calculate_average(grades)
+            gpa = calculate_gpa(average)
+            print("GPA:", gpa)
+        elif choice == '5':
+            print("Exiting program...")
+            break
+        else:
+            print("Invalid choice! Please enter a valid option.")
+
+if __name__ == "__main__":
+    main()
